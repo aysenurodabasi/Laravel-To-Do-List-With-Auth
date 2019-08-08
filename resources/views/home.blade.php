@@ -111,6 +111,7 @@
             </div>
         </div>
     </div>
+    </div>
 
 
     <script>
@@ -126,18 +127,14 @@
                 $("#formupdate").show();
             });
 
-
             $('.tasktitle').on('click',function(){
                 $(this).closest('.card').find('.tasklist').slideToggle();
             return false;
             });
 
-            var previousTarget=null;
+
             $('.okbutton').on('click',function(){
-                var $select = $(this).closest('.card').find('.tasktitle').css("text-decoration", "line-through");
-                if(this===previousTarget)
-                {  $(this).closest('.card').find('.tasktitle').css("text-decoration", "none");}
-                previousTarget=this;
+                $(this).closest('.card').find('.tasktitle').toggleClass("stroked");
                 return false;
 
             });
